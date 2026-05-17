@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Webloom — human-curated web discovery</title>
+    <meta
+      name="description"
+      content="Webloom is an early prototype for a human-curated web discovery app. Pull a random thread from a shared pool of human-submitted links."
+    />
+    <meta property="og:title" content="Webloom — human-curated web discovery" />
+    <meta
+      property="og:description"
+      content="An early prototype for a human-curated web discovery app. Pull a random thread from a shared pool of human-submitted links."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='28' fill='%23f4ecd8' stroke='%23b08968' stroke-width='2'/><path d='M16 32 Q32 12 48 32 Q32 52 16 32 Z' fill='none' stroke='%23774936' stroke-width='2'/></svg>" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Prototype · Work in progress</p>
+        <h1>Webloom</h1>
+        <p class="tagline">
+          A human-curated web discovery app. Pull a random thread from a shared
+          pool of hand-submitted links, and follow it wherever it leads.
+        </p>
+        <div class="cta-row">
+          <a
+            class="btn btn-primary"
+            href="https://www.perplexity.ai/computer/a/webloom-discovery-prototype-CwJP8qOXQOqSbG5dP_wtsg"
+            >Open the live prototype →</a
+          >
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/topaztorres/webloom-prototype"
+            >View on GitHub</a
+          >
+        </div>
+        <p class="hosting-note">
+          This page is a static project overview. The prototype itself runs an
+          Express + SQLite backend and lives at the link above — it cannot be
+          hosted on GitHub Pages directly.
+        </p>
+      </header>
+
+      <section class="section">
+        <h2>What it does today</h2>
+        <ul class="feature-list">
+          <li>
+            <strong>Pull a thread.</strong> One primary action on the homepage:
+            random site selection with visit tracking.
+          </li>
+          <li>
+            <strong>Field Notes.</strong> Expandable panel surfacing live
+            metrics — sites, visits, recent additions.
+          </li>
+          <li>
+            <strong>Webloom Index.</strong> Two views of the same library — a
+            visual Thread Map of categories, and a database-style shelf with
+            cards, tags, and contributors.
+          </li>
+          <li>
+            <strong>Submit.</strong> Validated link submission with category,
+            tags, and a contributor handle.
+          </li>
+          <li>
+            <strong>SQLite-backed API.</strong> Express endpoints for listing,
+            random pulls, visit increments, and stats.
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>How it's built</h2>
+        <div class="stack-grid">
+          <div>
+            <h3>Frontend</h3>
+            <p>React 18, Vite, TypeScript, Tailwind CSS, shadcn/ui, Framer Motion, Wouter, TanStack Query.</p>
+          </div>
+          <div>
+            <h3>Backend</h3>
+            <p>Express 5 on Node, written in TypeScript and run with <code>tsx</code> in dev, bundled with esbuild for production.</p>
+          </div>
+          <div>
+            <h3>Data</h3>
+            <p>SQLite via <code>better-sqlite3</code>, schema and validators defined once in <code>shared/</code> using Drizzle ORM and Zod.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Where it's headed</h2>
+        <ol class="milestones">
+          <li>Moderation queue — submissions stop auto-approving.</li>
+          <li>Contributor pages at <code>/by/:handle</code>.</li>
+          <li>Curated "threads" as a second axis alongside categories.</li>
+          <li>Local visit history with a "give me something new" guarantee.</li>
+          <li>A real hosting story with persistent storage.</li>
+          <li>A test harness (Vitest) for schema and API smoke tests.</li>
+        </ol>
+        <p class="aside">
+          A fuller list lives in the
+          <a href="https://github.com/topaztorres/webloom-prototype#suggested-next-milestones">README</a>.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Made by <a href="https://github.com/topaztorres">Topaz Torres</a> ·
+          <a href="https://github.com/topaztorres/webloom-prototype">source</a> ·
+          MIT licensed
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
